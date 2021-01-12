@@ -1,0 +1,11 @@
+body {
+  background-color: aqua;
+}
+img {
+  max-height: 40vh;
+  min-height: auto;
+}
+button {
+  margin: 0 auto;
+  width: 100%;
+}
