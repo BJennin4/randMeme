@@ -1,11 +1,30 @@
 body {
   background-color: aqua;
 }
+button {
+  margin: 0 auto;
+  width: 60%;
+}
+
 img {
+  max-width: 100%;
+}
+
+h2 {
+  width: 60%;
+  margin: 0 auto;
+}
+
+a {
+  width: 60%;
+}
+
+.card-img-top {
   max-height: 40vh;
   min-height: auto;
 }
-button {
+
+#rateContainer {
+  width: 60%;
   margin: 0 auto;
-  width: 100%;
 }

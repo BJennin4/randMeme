@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "uuid": "^8.3.2"
   }
 }

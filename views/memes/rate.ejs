@@ -1,0 +1,25 @@
+<%- include('../partials/head')  %> 
+<main class="container text-center mt-5">
+    <div class="bg-light" id="rateContainer">
+        <h1>Rate The Meme</h1>
+        <div class="container mt-3">
+            <p class="h4">Current Rating: 
+                <!-- Updates the rating if there is one -->
+                <% if(meme.rating){ %>
+                    <%= meme.rating %> 
+                <% } else { %> 
+                        ? 
+                <% } %> 
+            </p>
+        <form method="POST" action="/memes/<%= meme.id %>?_method=PATCH">
+            <label class="h4" for="rating">New Rating: </label>
+            <input type="number" id="rating" name="rating" min="1" max="5" aria-label="Meme Rating" placeholder="1" required>
+        </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+    <form action="/" class="mt-5">
+        <button class="btn btn-secondary btn-lg">Go Back Home</button>
+    </form>
+</main>
+<%- include('../partials/foot')  %> 

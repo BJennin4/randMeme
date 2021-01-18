@@ -1,14 +1,42 @@
+<!-- Everything is linked here so I can avoid pasting it 100 times -->
 <%- include('partials/head') %>
 
-
+<!-- meme button that sticks to the top of the page -->
 <main class="container-fluid text-center">
     <nav class="navbar sticky-top container-fluid">
         <div class="container-fluid">
             <button class="btn btn-secondary btn-lg" id="memeButton"><h1 class="">Make Some Memes</h1></button>
         </div>
       </nav>
-    
+
         <div class="row row-cols-1 row-cols-md-4 g-2" id="memeHolder">
+            <!-- Makes the meme cards -->
+            <% for(let m of memes) { %> 
+                <div class="col">
+                    <div class="card bg-light text-dark">
+                        <img src="<%= m.memeUrl %>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Rating: 
+                            <!-- Updates the rating if there is one -->
+                            <% if(m.rating) { %>
+                                <%= m.rating %>
+                            <% } else { %>
+                                ?
+                            <% } %>
+                            </h5>
+                            <!-- Buttons for making the magic happen -->
+                            <div class="card-text" aria-label="Meme Editing">
+                                <a class="btn btn-outline-success" href="/memes/<%= m.id %>">Look Closer</a>
+                                <a class="btn btn-outline-info" href="/memes/<%= m.id %>/rate">Rate</a>
+                                <form method="POST" action="/memes/<%= m.id %>?_method=DELETE">
+                                    <button class="btn btn-outline-danger">Destroy</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <% } %>
         </div>
 </main>  
 
